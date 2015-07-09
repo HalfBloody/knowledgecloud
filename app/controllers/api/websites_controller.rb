@@ -5,8 +5,8 @@ class Api::WebsitesController < ApplicationController
     @tag = Tag.first_or_create(name: wp[:name])
     @website.tags << @tag
     respond_to do |format|
-      format.html { render json @website.to_json }
-      format.json { render json @website.to_json }
+      format.html { render json: @website.to_json }
+      format.json { render json: @website.to_json }
     end
   end
 
