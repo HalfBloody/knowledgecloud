@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :front do
     resources :tags, only: [:index, :show]
+    resources :websites, only: [:new, :create]
   end
 
   namespace :api do
