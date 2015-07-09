@@ -1,2 +1,15 @@
 class Api::WebsitesController < ApplicationController
+
+  def create
+    @website = Website.update_or_create(url: wp[:url], description: wp[:description], user_email: wp[:user_email])    
+    @tag = Tag.update_or_create(name: wp[:name])
+    @website.tags << @tag
+    respond_to do |format|
+      format.html {}
+      format.json {}
+  end
+
+  def wp
+    params.permit!
+  end
 end
