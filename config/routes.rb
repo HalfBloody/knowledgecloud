@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   namespace :front do
-  get 'tags/index'
-  end
-
-  namespace :front do
-  get 'tags/show'
+    resources :tags, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
