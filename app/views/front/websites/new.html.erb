@@ -1,0 +1,11 @@
+
+
+<h1>Add website</h1>
+
+<% simple_form_for [:front, @website] do |f| %>
+
+<%= f.input :url %>
+<%= f.input :description %>
+<%= f.input :user_email %>
+<%= f.submit "save" %>
+`<% end %>

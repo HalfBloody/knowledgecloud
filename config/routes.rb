@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :front do
+  get 'websites/new'
+  end
+
+  namespace :front do
+  get 'websites/create'
+  end
+
   root 'front/tags#index'
 
   namespace :front do
