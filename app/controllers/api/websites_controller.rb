@@ -1,7 +1,7 @@
 class Api::WebsitesController < ApplicationController
-  protect_from_forgery :except => :create 
+  # protect_from_forgery :except => :create 
   def create
-    @website = Website.first_or_create(url: wp[:url], description: wp[:description], user_email: wp[:user_email])    
+    @website = Website.create_with(description: wp[:description], user_email: wp[:user_email]).first_or_create(url: wp[:url])
     @tag_string = wp[:tags]
     @tags = @tag_string.split(",")
     @tags.each do |tag|
