@@ -11,4 +11,8 @@
 class Tag < ActiveRecord::Base
   has_many :tag_joins
   has_many :websites, through: :tag_joins
+
+  def count
+    self.tag_joins.size
+  end
 end
