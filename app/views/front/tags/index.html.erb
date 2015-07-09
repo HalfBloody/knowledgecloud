@@ -1,7 +1,7 @@
 <h1>Front::Tags#index</h1>
 <p>Find me in app/views/front/tags/index.html.erb</p>
 
-<% @tags do |tag| %>
+<% @tags.each do |tag| %>
 
 <%= link_to tag.name, front_tag_path(tag) %>
 <br>

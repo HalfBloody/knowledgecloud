@@ -5,6 +5,6 @@ class Front::TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @websites = Website.find_by(@tag)
+    @websites = @tag.websites
   end
 end

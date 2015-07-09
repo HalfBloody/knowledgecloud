@@ -1,14 +1,20 @@
 <h1>Front::Tags#show</h1>
 <p>Find me in app/views/front/tags/show.html.erb</p>
 
-<%= @tag.name %>
 
-<% @websites.each do |website| %>
-<%= website.url %>
-<%= website.description %>
-<%= website.user_email %>
-<br>
+<%= @tag.name %>
+<% if @websites %>
+  <% @websites.each do |website| %>
+  <%= website.url %>
+  <%= website.description %>
+  <%= website.user_email %>
+  <% end %>
+  <br>
+<% else %>
+  No websites for this tag
 <% end %>
 
 
+<p>
 <%= link_to "Back to Knowledgecloud", front_tags_path %>
+</p>

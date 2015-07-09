@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'front/tags#index'
+
   namespace :front do
     resources :tags, only: [:index, :show]
   end
