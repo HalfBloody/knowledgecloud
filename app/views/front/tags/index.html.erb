@@ -1,8 +1,55 @@
-<h1>Front::Tags#index</h1>
-<p>Find me in app/views/front/tags/index.html.erb</p>
 
-<% @tags.each do |tag| %>
+        
 
-<%= link_to tag.name, front_tag_path(tag) %>
-<br>
-<% end %>
+
+        
+        <script>
+            
+            var words = <%= raw @tags.to_json %>;
+
+
+            // [
+            //   {text: "iOS", weight: 13, link: 'http://github.com/mistic100/jQCloud'},
+            //   {text: "Ruby", weight: 10.5, link: 'http://www.strangeplanet.fr'},
+            //   {text: "Java", weight: 9.4, link: 'http://piwigo.org'},
+            //   {text: "Android", weight: 13, link: 'http://github.com/mistic100/jQCloud'},
+            //   {text: "Python", weight: 10.5, link: 'http://www.strangeplanet.fr'},
+            //   {text: "Rails", weight: 9.4, link: 'http://piwigo.org'},
+            //   {text: "PHP", weight: 9.4, link: 'http://piwigo.org'},
+            //   {text: "Frontend", weight: 13, link: 'http://github.com/mistic100/jQCloud'},
+            //   {text: "Backend", weight: 10.5, link: 'http://www.strangeplanet.fr'},
+            //   {text: "Node.js", weight: 13, link: 'http://github.com/mistic100/jQCloud'},
+            //   {text: "Angular.js", weight: 10.5, link: 'http://www.strangeplanet.fr'},
+            //   {text: "Haskell", weight: 9.4, link: 'http://piwigo.org'},
+            // ];
+
+            $(document).ready(function() {
+                $('#demo').jQCloud(words, {
+                   
+                    width: 500,
+                    height: 350
+                });
+                
+            });
+        
+        </script>
+
+        <title>Knowledge Cloud</title>
+
+    </head>
+
+
+    <body>
+
+        <div class="container">
+        <h1>Knowledge Cloud</h1>
+        
+            <div class="cloud">
+                <div id="demo" class="demo"></div>
+            </div>
+            
+        </div>
+
+    </body>
+
+</html>
