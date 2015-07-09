@@ -5,7 +5,7 @@ class Api::WebsitesController < ApplicationController
     @tag = Tag.first_or_create(name: wp[:name])
     @website.tags << @tag
     respond_to do |format|
-      format.html {}
+      
       format.json { render status: 200 }
     end
   end
